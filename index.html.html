@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendendo o Aquecimento Global</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #e0f7fa, #b2ebf2);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #00796b;
+            text-align: center;
+        }
+
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+
+        .event {
+            border: 2px solid #00796b;
+            background: #b2dfdb;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .info {
+            display: none;
+            padding: 10px;
+            background-color: #e0f2f1;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .video {
+            position: relative;
+            padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Entendendo o Aquecimento Global</h1>
+
+    <div class="section" id="intro-section">
+        <h2>Introdução</h2>
+        <p id="intro-text">O aquecimento global é um dos maiores desafios que enfrentamos atualmente. Neste material, você aprenderá sobre suas causas, efeitos e como podemos agir para mitigá-lo.</p>
+    </div>
+
+    <div class="section" id="causas-section">
+        <h2>Causas do Aquecimento Global</h2>
+        <p id="causas-text">As principais causas incluem:</p>
+        <ul>
+            <li>Emissões de gases de efeito estufa</li>
+            <li>Desmatamento</li>
+            <li>Atividades industriais</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Efeitos do Aquecimento Global</h2>
+        <p>Os efeitos incluem:</p>
+        <ul>
+            <li>Mudanças climáticas severas</li>
+            <li>Derretimento de geleiras</li>
+            <li>Aumento do nível do mar</li>
+        </ul>
+
+        <div class="timeline">
+            <div class="event" onclick="toggleInfo('info1')">
+                <div class="date">1970</div>
+                <p>Primeiro Dia da Terra.</p>
+                <div class="info" id="info1">Em 22 de abril de 1970, milhões de pessoas se uniram para protestar em prol do meio ambiente.</div>
+            </div>
+            <div class="event" onclick="toggleInfo('info2')">
+                <div class="date">1988</div>
+                <p>Criação do IPCC.</p>
+                <div class="info" id="info2">O IPCC foi criado para fornecer informações científicas sobre mudanças climáticas.</div>
+            </div>
+            <div class="event" onclick="toggleInfo('info3')">
+                <div class="date">1992</div>
+                <p>Conferência na Rio-92.</p>
+                <div class="info" id="info3">Essa conferência resultou na Agenda 21, um plano de ação global.</div>
+            </div>
+            <div class="event" onclick="toggleInfo('info4')">
+                <div class="date">1997</div>
+                <p>Protocolo de Quioto.</p>
+                <div class="info" id="info4">O protocolo estabeleceu metas de redução de emissões.</div>
+            </div>
+            <div class="event" onclick="toggleInfo('info5')">
+                <div class="date">2006</div>
+                <p>Documentário "Uma Verdade Inconveniente".</p>
+                <div class="info" id="info5">Este documentário trouxe a questão para a atenção do público.</div>
+            </div>
+            <div class="event" onclick="toggleInfo('info6')">
+                <div class="date">2015</div>
+                <p>Acordo de Paris.</p>
+                <div class="info" id="info6">Um pacto global para limitar o aquecimento a menos de 2 graus Celsius.</div>
+            </div>
+            <div class="event" onclick="toggleInfo('info7')">
+                <div class="date">2021</div>
+                <p>Relatório do IPCC.</p>
+                <div class="info" id="info7">Destacou a urgência de ações imediatas.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section video">
+        <h2>Vídeo Educativo</h2>
+        <p>Assista ao vídeo abaixo:</p>
+        <iframe src="https://www.youtube.com/embed/vzDWFsfrFGY?autoplay=1&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div class="section">
+        <h2>Recursos Adicionais</h2>
+        <ul id="recursos-list">
+            <li><a href="#" id="link1">Artigo sobre energias renováveis</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleInfo(infoId) {
+            const info = document.getElementById(infoId);
+            info.style.display = info.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Função para editar conteúdo facilmente
+        function editContent() {
+            document.getElementById("intro-text").innerText = "Seu novo texto de introdução.";
+            document.getElementById("link1").href = "novo-link.html"; // Atualize o link
+            document.getElementById("link1").innerText = "Novo texto para o link"; // Atualize o texto do link
+        }
+
+        // Chame a função para editar conteúdo, se necessário
+        // editContent();
+    </script>
+
+</body>
+
+</html>
